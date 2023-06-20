@@ -178,4 +178,22 @@ var formulaTable = map[string]func(n int) int{
 		}
 		return 3
 	},
+	fmtForms("nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);"): func(n int) int {
+		if n == 0 {
+			return 0
+		}
+		if n == 1 {
+			return 1
+		}
+		if n == 2 {
+			return 2
+		}
+		if n%100 >= 3 && n%100 <= 10 {
+			return 3
+		}
+		if n%100 >= 11 {
+			return 4
+		}
+		return 5
+	},
 }
